@@ -101,6 +101,7 @@
             this.txtNama.Name = "txtNama";
             this.txtNama.Size = new System.Drawing.Size(313, 35);
             this.txtNama.TabIndex = 7;
+            this.txtNama.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNama_KeyPress);
             // 
             // txtStok
             // 
@@ -109,6 +110,7 @@
             this.txtStok.Name = "txtStok";
             this.txtStok.Size = new System.Drawing.Size(100, 35);
             this.txtStok.TabIndex = 8;
+            this.txtStok.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStok_KeyPress);
             // 
             // txtHarga
             // 
@@ -117,6 +119,7 @@
             this.txtHarga.Name = "txtHarga";
             this.txtHarga.Size = new System.Drawing.Size(313, 35);
             this.txtHarga.TabIndex = 9;
+            this.txtHarga.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHarga_KeyPress);
             // 
             // btnSimpan
             // 
@@ -138,6 +141,7 @@
             this.btnBatal.TabIndex = 12;
             this.btnBatal.Text = "Batal";
             this.btnBatal.UseVisualStyleBackColor = true;
+            this.btnBatal.Click += new System.EventHandler(this.btnBatal_Click);
             // 
             // panel1
             // 
