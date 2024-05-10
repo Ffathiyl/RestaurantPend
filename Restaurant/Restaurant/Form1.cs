@@ -16,5 +16,12 @@ namespace Restaurant
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e) {
+            this.WindowState = FormWindowState.Maximized;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+        }
     }
 }
