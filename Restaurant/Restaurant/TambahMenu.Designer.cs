@@ -39,8 +39,10 @@
             this.btnSimpan = new System.Windows.Forms.Button();
             this.btnBatal = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.rbMakanan = new System.Windows.Forms.RadioButton();
             this.rbMinuman = new System.Windows.Forms.RadioButton();
+            this.rbMakanan = new System.Windows.Forms.RadioButton();
+            this.richTextBoxDeskripsi = new System.Windows.Forms.RichTextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +50,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(382, 147);
+            this.label2.Location = new System.Drawing.Point(373, 150);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 29);
             this.label2.TabIndex = 3;
@@ -58,7 +60,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(483, 55);
+            this.label1.Location = new System.Drawing.Point(491, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(235, 37);
             this.label1.TabIndex = 2;
@@ -68,7 +70,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(382, 297);
+            this.label3.Location = new System.Drawing.Point(373, 453);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 29);
             this.label3.TabIndex = 4;
@@ -78,7 +80,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(382, 247);
+            this.label4.Location = new System.Drawing.Point(373, 403);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 29);
             this.label4.TabIndex = 5;
@@ -88,7 +90,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(382, 197);
+            this.label5.Location = new System.Drawing.Point(373, 341);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 29);
             this.label5.TabIndex = 6;
@@ -97,7 +99,7 @@
             // txtNama
             // 
             this.txtNama.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtNama.Location = new System.Drawing.Point(539, 144);
+            this.txtNama.Location = new System.Drawing.Point(530, 147);
             this.txtNama.Name = "txtNama";
             this.txtNama.Size = new System.Drawing.Size(313, 35);
             this.txtNama.TabIndex = 7;
@@ -106,7 +108,7 @@
             // txtStok
             // 
             this.txtStok.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtStok.Location = new System.Drawing.Point(539, 294);
+            this.txtStok.Location = new System.Drawing.Point(530, 449);
             this.txtStok.Name = "txtStok";
             this.txtStok.Size = new System.Drawing.Size(100, 35);
             this.txtStok.TabIndex = 8;
@@ -115,7 +117,7 @@
             // txtHarga
             // 
             this.txtHarga.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtHarga.Location = new System.Drawing.Point(539, 244);
+            this.txtHarga.Location = new System.Drawing.Point(530, 398);
             this.txtHarga.Name = "txtHarga";
             this.txtHarga.Size = new System.Drawing.Size(313, 35);
             this.txtHarga.TabIndex = 9;
@@ -124,7 +126,7 @@
             // btnSimpan
             // 
             this.btnSimpan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnSimpan.Location = new System.Drawing.Point(367, 407);
+            this.btnSimpan.Location = new System.Drawing.Point(358, 563);
             this.btnSimpan.Name = "btnSimpan";
             this.btnSimpan.Size = new System.Drawing.Size(106, 48);
             this.btnSimpan.TabIndex = 11;
@@ -135,7 +137,7 @@
             // btnBatal
             // 
             this.btnBatal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnBatal.Location = new System.Drawing.Point(728, 407);
+            this.btnBatal.Location = new System.Drawing.Point(719, 563);
             this.btnBatal.Name = "btnBatal";
             this.btnBatal.Size = new System.Drawing.Size(106, 48);
             this.btnBatal.TabIndex = 12;
@@ -147,22 +149,10 @@
             // 
             this.panel1.Controls.Add(this.rbMinuman);
             this.panel1.Controls.Add(this.rbMakanan);
-            this.panel1.Location = new System.Drawing.Point(539, 192);
+            this.panel1.Location = new System.Drawing.Point(530, 336);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(313, 46);
             this.panel1.TabIndex = 13;
-            // 
-            // rbMakanan
-            // 
-            this.rbMakanan.AutoSize = true;
-            this.rbMakanan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.rbMakanan.Location = new System.Drawing.Point(3, 3);
-            this.rbMakanan.Name = "rbMakanan";
-            this.rbMakanan.Size = new System.Drawing.Size(135, 33);
-            this.rbMakanan.TabIndex = 0;
-            this.rbMakanan.TabStop = true;
-            this.rbMakanan.Text = "Makanan";
-            this.rbMakanan.UseVisualStyleBackColor = true;
             // 
             // rbMinuman
             // 
@@ -176,11 +166,43 @@
             this.rbMinuman.Text = "Minuman";
             this.rbMinuman.UseVisualStyleBackColor = true;
             // 
+            // rbMakanan
+            // 
+            this.rbMakanan.AutoSize = true;
+            this.rbMakanan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.rbMakanan.Location = new System.Drawing.Point(3, 3);
+            this.rbMakanan.Name = "rbMakanan";
+            this.rbMakanan.Size = new System.Drawing.Size(135, 33);
+            this.rbMakanan.TabIndex = 0;
+            this.rbMakanan.TabStop = true;
+            this.rbMakanan.Text = "Makanan";
+            this.rbMakanan.UseVisualStyleBackColor = true;
+            // 
+            // richTextBoxDeskripsi
+            // 
+            this.richTextBoxDeskripsi.Location = new System.Drawing.Point(530, 210);
+            this.richTextBoxDeskripsi.Name = "richTextBoxDeskripsi";
+            this.richTextBoxDeskripsi.Size = new System.Drawing.Size(313, 96);
+            this.richTextBoxDeskripsi.TabIndex = 14;
+            this.richTextBoxDeskripsi.Text = "";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(373, 246);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(114, 29);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Deskripsi";
+            // 
             // TambahMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.richTextBoxDeskripsi);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnBatal);
             this.Controls.Add(this.btnSimpan);
@@ -217,5 +239,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RadioButton rbMakanan;
         private System.Windows.Forms.RadioButton rbMinuman;
+        private System.Windows.Forms.RichTextBox richTextBoxDeskripsi;
+        private System.Windows.Forms.Label label6;
     }
 }
