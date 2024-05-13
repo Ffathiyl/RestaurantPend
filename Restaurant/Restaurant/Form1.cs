@@ -25,7 +25,10 @@ namespace Restaurant
             this.MaximizeBox = false;
             this.MinimizeBox = false;
         }
-
+        private void ChildForm_FormClosed(object sender, FormClosedEventArgs e) {
+            // When the child form is closed, show the parent form again
+            this.Show();
+        }
         private void btn_Login_Click(object sender, EventArgs e) {
             if(txt_Username.Text == ""|| txt_Password.Text == "") {
                 MessageBox.Show("Masukan Username dan Password", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -42,7 +45,10 @@ namespace Restaurant
                             MessageBox.Show("Username atau Password salah");
                         } else {
                             if(buffer == "1") {
-                                // code
+                                Home_Kasir kasir = new Home_Kasir();
+                                kasir.Show();
+                                kasir.FormClosed += ChildForm_FormClosed;
+                                this.Hide();
                             }else if(buffer == "0") {
                                 // code
                             }
