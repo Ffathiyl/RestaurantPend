@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Restaurant.FormLaporan;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -54,7 +55,7 @@ namespace Restaurant
 
         private void btnLaporan_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new LaporanPesananMenu());
         }
     }
 }

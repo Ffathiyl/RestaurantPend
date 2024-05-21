@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Restaurant.FormMaster;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -55,7 +56,12 @@ namespace Restaurant
 
         private void btnTrsMakanan_Click(object sender, EventArgs e)
         {
+            openChildForm(new TransaksiMenu());
+        }
 
+        private void ButtonMenu_Click(object sender, EventArgs e)
+        {
+            openChildForm(new MasterMenu());
         }
     }
 }
