@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -274,13 +275,13 @@ namespace Restaurant
 
         private void txtbayar_TextChanged(object sender, EventArgs e)
         {
-            string input = txtbayar.Text;
-            string cleaninput = Regex.Replace(input, "[^0-9]", "");
-
-            if (!string.IsNullOrEmpty(cleaninput))
+            string buffer = txtbayar.Text.Replace("Rp", "").Replace(",", "").Trim();
+            if (decimal.TryParse(buffer, out decimal parsedValue))
             {
-                double pembayaran = double.Parse(cleaninput);
-                txtbayar.Text = pembayaran.ToString("#,0");
+                // Format the text as currency
+                txtbayar.Text = parsedValue.ToString("C", CultureInfo.CurrentCulture);
+
+                // Move the caret to the end of the text
                 txtbayar.SelectionStart = txtbayar.Text.Length;
             }
         }
@@ -299,6 +300,19 @@ namespace Restaurant
                 }
             }
             txtTotal.Text = total.ToString("#,0");
+        }
+
+        private void txtjual_TextChanged(object sender, EventArgs e)
+        {
+            string buffer = txtjual.Text.Replace("Rp", "").Replace(",", "").Trim();
+            if (decimal.TryParse(buffer, out decimal parsedValue))
+            {
+                // Format the text as currency
+                txtjual.Text = parsedValue.ToString("C", CultureInfo.CurrentCulture);
+
+                // Move the caret to the end of the text
+                txtjual.SelectionStart = txtjual.Text.Length;
+            }
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -381,6 +382,35 @@ namespace Restaurant.FormMaster
                 txtid.Text = count.ToString();
                 return count.ToString();
 
+            }
+        }
+
+        private void txtharga_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtstok_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtharga_TextChanged(object sender, EventArgs e)
+        {
+            string buffer = txtharga.Text.Replace("Rp", "").Replace(",", "").Trim();
+            if (decimal.TryParse(buffer, out decimal parsedValue))
+            {
+                // Format the text as currency
+                txtharga.Text = parsedValue.ToString("C", CultureInfo.CurrentCulture);
+
+                // Move the caret to the end of the text
+                txtharga.SelectionStart = txtharga.Text.Length;
             }
         }
     }
