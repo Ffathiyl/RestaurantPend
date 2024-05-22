@@ -253,8 +253,27 @@ namespace Restaurant.FormMaster
         {
             autoid();
             loadData();
+            ModifyStatusColumn();
             cbjenis.SelectedItem = "-- Pilih Jenis --";
             cbStatus.SelectedItem = "Aktif";
+        }
+        private void ModifyStatusColumn()
+        {
+            foreach (DataGridViewRow row in dgAkun.Rows)
+            {
+                if (row.Cells["mnu_tatus"].Value != null)
+                {
+                    int statusValue = (int)row.Cells["mnu_status"].Value;
+                    if (statusValue == 1)
+                    {
+                        row.Cells["mnu_status"].Value = "Aktif";
+                    }
+                    else if (statusValue == 0)
+                    {
+                        row.Cells["mnu_status"].Value = "Non-Aktif";
+                    }
+                }
+            }
         }
 
         private void dgAkun_CellClick(object sender, DataGridViewCellEventArgs e)
